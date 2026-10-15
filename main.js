@@ -7,7 +7,9 @@ gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
 CustomEase.create("osmo", "0.625, 0.05, 0, 1");
 gsap.defaults({ overwrite: "auto", ease: "osmo", duration: 0.6 });
 
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+/* The reference ignores prefers-reduced-motion (no such condition in its IX3 data), so the page moves the same
+   with the system's animations off (decision 15.10.2026; Grzegorz's Windows has them off) */
+const reduceMotion = false;
 const isTouch = window.matchMedia("(hover: none)").matches;
 
 /* ------------------------------------------------------------

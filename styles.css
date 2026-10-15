@@ -610,10 +610,6 @@ h1, h2, p { margin: 0; }
   .nav-link-mobile { background-color: #e6e6e66e; border-radius: 10vw; padding: 3.5vw 4.5vw; font-size: 3.5vw; display: flex; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .container-loader { display: none; }
-}
-
 /* ============================================================
    SECTION 3 — SERVICES ("I help brands to shine through…")
    Values 1:1 from the reference CSS (.service-*, .mask-img-service…).
@@ -1052,11 +1048,6 @@ h1, h2, p { margin: 0; }
   .webflow-frame { left: 3.3vw; }
   .framer-frame { left: 4.9vw; }
   .text-mv-cursor { letter-spacing: 0; font-weight: 500; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .svc-card, .svc-card * { animation: none !important; }
-  .ap-line { stroke-dashoffset: 0; }
-  .ap-area { opacity: 1; }
 }
 
 /* ============================================================
@@ -1708,7 +1699,4 @@ h1, h2, p { margin: 0; }
   .wrapper-column.right { width: 42%; }
   .wrapper-item-column { margin-bottom: 4vw; }
   .footer-social-link { font-size: 3.2vw; font-weight: 500; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .footer-scene, .footer-scene * { animation: none !important; }
 }
