@@ -331,6 +331,10 @@ h1, h2, p { margin: 0; }
   gap: 1vw;
   position: relative;
   overflow: hidden;
+  /* room above the cap height for Figtree's "l" ascender and "i" dot (the reference's Lottie letters stay below
+     it); the negative margin keeps the box where it was (15.10.2026, Grzegorz: tops of the letters cut) */
+  padding-top: 4vw;
+  margin-top: -4vw;
 }
 
 /* mouse-driven name ------------------------------------------- */
@@ -1118,14 +1122,11 @@ h1, h2, p { margin: 0; }
     linear-gradient(90deg, #120a0666 0%, #120a0626 32%, #0000 60%),
     linear-gradient(180deg, #0000 55%, #1a0f0a40 100%);
 }
-.mv-siluete-img {
-  z-index: 35;
-  /* hand-traced outline of the figure (hair, head, shoulder) in the mirrored crop, % of the layer box */
-  clip-path: polygon(48% 0%, 64% 0%, 68% 2.5%, 74% 4.5%, 79% 7.5%, 84% 11%, 88% 16%, 90.5% 21%, 91.5% 28%,
-    91% 38%, 90.5% 46%, 89% 56%, 86% 64%, 81% 70%, 74% 74%, 67% 75%, 61% 71%, 58% 66%, 58.5% 80%, 59% 100%,
-    0% 100%, 0% 83%, 12% 70%, 24% 57%, 32% 50%, 37.5% 46%, 40% 42%, 36.5% 40%, 34.5% 37%, 34% 33%,
-    35.5% 29%, 36.5% 25%, 39.5% 21%, 42% 17%, 44.5% 12%, 46% 6%);
-}
+.mv-siluete-img { z-index: 35; }
+/* the figure cut out of the same photo (img/about-sil.webp: same size, alpha from a person-segmentation model, soft
+   hair strands) instead of a hand-traced polygon; same crop and mirror as the photo layers (15.10.2026) */
+.mv-siluete-img::before { background-image: url("img/about-sil.webp"); }
+.mv-siluete-img::after { content: none; }
 
 /* step 1 ------------------------------------------------------- */
 .main-cont-step1 {
@@ -1486,6 +1487,9 @@ h1, h2, p { margin: 0; }
   line-height: 75%;
 }
 .name-footer.right { text-align: right; }
+/* SplitText word masks clip at the line box (75%): give the "i" dot and the overhang of the last "s" room, without
+   moving the words (15.10.2026, Grzegorz: "i" and the last "s" cut) */
+.name-footer .word-mask { padding: .12em .08em 0 0; margin: -.12em -.08em 0 0; }
 .image-4 { width: 3vw; display: none; }   /* the reference keeps its footer logo hidden at every breakpoint */
 .text-span-3 { opacity: .5; }
 .text-span-4 { opacity: .51; font-weight: 400; }
@@ -1529,6 +1533,14 @@ h1, h2, p { margin: 0; }
   border-radius: 4vw 4vw 1vw 1vw;
   background: linear-gradient(180deg, #3a2a24 0%, #2a1e1a 60%, #1e1512 100%);
   box-shadow: inset 0 .4vw 1vw #ffffff0d, 0 2vw 4vw #0009;
+}
+/* Mila behind the monitor: head and headphones about as wide as the reference's (≈14 vw); the monitor's top edge
+   (51.7vh) meets the drawing at 160/220, just under the chin */
+.fs-mila {
+  left: 50%; width: 21vw; margin-left: -10.5vw;
+  top: calc(51.7vh - 16.8vw);
+  overflow: visible;
+  filter: drop-shadow(0 1vw 1.6vw #0009);
 }
 .fs-glow {
   left: 50%; top: 52vh; width: 60vw; height: 36vw;
@@ -1669,6 +1681,7 @@ h1, h2, p { margin: 0; }
   .fs-art.a1, .fs-art.a4, .fs-lamp, .fs-lamp-light { display: none; }
   .fs-sofa { left: -10vw; right: -10vw; }
   .fs-screen { left: 10vw; width: 80vw; }
+  .fs-mila { width: 46vw; margin-left: -23vw; top: calc(51.7vh - 36.8vw); }
 }
 @media screen and (max-width: 479px) {
   .section { justify-content: center; align-items: center; }

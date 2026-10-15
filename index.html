@@ -569,6 +569,54 @@
           <div class="fs-art a3"><i></i><b></b></div>
           <div class="fs-art a4"><i></i></div>
           <div class="fs-sofa"></div>
+          <!-- Mila behind the monitor (our own character in place of the reference's animated desk video) -->
+          <svg class="fs-mila" id="fsMila" viewBox="0 0 200 220" aria-hidden="true">
+            <defs>
+              <radialGradient id="mSkin" cx="50%" cy="78%" r="70%">
+                <stop offset="0" stop-color="#f2b48f"/><stop offset=".55" stop-color="#c98463"/><stop offset="1" stop-color="#8a5442"/>
+              </radialGradient>
+              <linearGradient id="mHair" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#3a2419"/><stop offset=".6" stop-color="#24150f"/><stop offset="1" stop-color="#1a0f0b"/>
+              </linearGradient>
+              <linearGradient id="mCup" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#9a96ad"/><stop offset=".6" stop-color="#5a5668"/><stop offset="1" stop-color="#34313d"/>
+              </linearGradient>
+              <linearGradient id="mKnit" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#8a5e26"/><stop offset="1" stop-color="#4a3014"/>
+              </linearGradient>
+              <radialGradient id="mLight" cx="50%" cy="100%" r="80%">
+                <stop offset="0" stop-color="#ffbc95" stop-opacity=".75"/><stop offset="1" stop-color="#ffbc95" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <g class="m-body">
+              <path d="M22 222 C30 190 58 176 100 174 C142 176 170 190 178 222 Z" fill="url(#mKnit)"/>
+              <path d="M70 178 Q100 196 130 178" fill="none" stroke="#3a2510" stroke-width="5" stroke-linecap="round"/>
+              <rect x="88" y="138" width="24" height="44" rx="10" fill="#9a5f48"/>
+            </g>
+            <g class="m-head">
+              <path d="M46 96 C44 52 70 34 100 34 C130 34 156 52 154 96 L158 150 C146 160 128 158 122 150 L78 150 C72 158 54 160 42 150 Z" fill="url(#mHair)"/>
+              <ellipse cx="100" cy="108" rx="33" ry="41" fill="url(#mSkin)"/>
+              <ellipse class="m-light" cx="100" cy="128" rx="34" ry="26" fill="url(#mLight)"/>
+              <ellipse cx="80" cy="124" rx="7" ry="4" fill="#e88f72" opacity=".35"/>
+              <ellipse cx="120" cy="124" rx="7" ry="4" fill="#e88f72" opacity=".35"/>
+              <g class="m-eyes">
+                <ellipse class="m-eye" cx="87" cy="111" rx="5.2" ry="3" fill="#24150f"/>
+                <ellipse class="m-eye" cx="113" cy="111" rx="5.2" ry="3" fill="#24150f"/>
+                <circle class="m-glint" cx="88.6" cy="109.8" r="1.1" fill="#ffd9c2"/>
+                <circle class="m-glint" cx="114.6" cy="109.8" r="1.1" fill="#ffd9c2"/>
+              </g>
+              <path d="M79 101 Q87 97 94 100 M106 100 Q113 97 121 101" fill="none" stroke="#2a1810" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M100 113 Q97 123 101 126" fill="none" stroke="#9a5a44" stroke-width="1.8" stroke-linecap="round"/>
+              <path class="m-mouth" d="M93 136 Q100 140 107 136" fill="none" stroke="#7d3d2f" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M66 96 C66 66 82 56 100 56 C120 56 136 66 135 96 C128 82 118 76 108 80 C98 70 80 74 66 96 Z" fill="url(#mHair)"/>
+              <path d="M67 90 C60 114 62 136 66 152 L74 152 C70 132 70 112 74 94 Z M133 90 C140 114 138 136 134 152 L126 152 C130 132 130 112 126 94 Z" fill="#20130d"/>
+              <path d="M52 100 C50 48 74 30 100 30 C126 30 150 48 148 100" fill="none" stroke="#4c4858" stroke-width="7" stroke-linecap="round"/>
+              <path d="M52 100 C50 48 74 30 100 30 C126 30 150 48 148 100" fill="none" stroke="#8e8aa0" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+              <rect x="36" y="90" width="22" height="36" rx="10" fill="url(#mCup)" stroke="#ffbc95" stroke-opacity=".45" stroke-width="1.5"/>
+              <rect x="142" y="90" width="22" height="36" rx="10" fill="url(#mCup)" stroke="#ffbc95" stroke-opacity=".45" stroke-width="1.5"/>
+              <circle class="m-led" cx="153" cy="118" r="1.6" fill="#ffbc95"/>
+            </g>
+          </svg>
           <div class="fs-glow"></div>
           <div class="fs-screen"><span class="fs-logo"></span></div>
           <div class="fs-lamp"><i></i><b></b></div>

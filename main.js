@@ -635,6 +635,28 @@ function initFooter() {
   const tlNames = scrubTimeline(cta, "bottom center", "bottom top", 0.8);
   tlNames.fromTo(sNames.words, { y: "10vw" }, { y: "0vw", duration: 2, stagger: { amount: 0.2 }, ease: "power1.out" }, 0);
   finishIfReduced(tlReveal, tlNames);
+  initFooterMila(footer);
+}
+
+/* Mila behind the monitor: a slow head sway, a small nod to the music, blinks, eyes reading across the screen and the
+   screen light flickering on her face. Plays only while the footer is on screen. */
+function initFooterMila(footer) {
+  const svg = document.getElementById("fsMila");
+  if (!svg) return;
+  const q = (s) => svg.querySelectorAll(s);
+  const tl = gsap.timeline({ paused: true });
+  tl.to(q(".m-head"), { rotation: 2.2, svgOrigin: "100 170", duration: 3.2, ease: "sine.inOut", repeat: -1, yoyo: true }, 0)
+    .to(q(".m-head"), { y: 1.6, duration: 0.46, ease: "sine.inOut", repeat: -1, yoyo: true }, 0)
+    .to(q(".m-body"), { y: 0.8, duration: 0.46, ease: "sine.inOut", repeat: -1, yoyo: true }, 0.08)
+    .to(q(".m-eye, .m-glint"), { scaleY: 0.12, transformOrigin: "50% 50%", duration: 0.07, ease: "power1.in",
+      repeat: -1, yoyo: true, repeatDelay: 3.4 }, 1.2)
+    .to(q(".m-eyes"), { x: 2.4, duration: 1.6, ease: "steps(4)", repeat: -1, yoyo: true, repeatDelay: 0.5 }, 0)
+    .to(q(".m-light"), { opacity: 0.45, duration: 0.9, ease: "sine.inOut", repeat: -1, yoyo: true }, 0)
+    .to(q(".m-led"), { opacity: 0.2, duration: 0.8, ease: "steps(1)", repeat: -1, yoyo: true }, 0);
+  ScrollTrigger.create({
+    trigger: footer, start: "top bottom", end: "bottom top",
+    onToggle: (self) => (self.isActive ? tl.play() : tl.pause()),
+  });
 }
 
 /* ------------------------------------------------------------
