@@ -82,6 +82,17 @@ poprawianych miejscach (plus znane fałszywe alarmy, niżej). Nie sprawdzone: pr
 Zostaje (do decyzji): kadr zdjęcia benefits (głowa zasłania „gn”, w oryginale 2–3 litery), różnice 2–7 z
 `analiza-0.md` (plansza, czasy wejścia, nawigacja 10 px wyżej, rozciąganie nazwiska, bryły, kolor zdjęcia benefits).
 
+### Sesja 2, część 2 (15.10 wieczorem, telefon Galaxy M15 podłączony)
+
+| # | Uwaga | Stan | Przyczyna | Skąd błąd |
+|---|---|---|---|---|
+| 6 | „zepsuta” animacja wejścia (desktop i telefon) | ✓ | słowa planszy miały też klasę `intro`, a reguła `.intro` panelu robiła je absolutnymi o szerokości 0: „Mila” i „Voss” w jednym punkcie. Błąd był od 14.10; widoczny dopiero teraz, bo wcześniej plansza była pominięta (reduced motion) | (b) wejście nie było porównane klatkami obok oryginału (B4) |
+| 7 | animacje lekko przycinają na telefonie | oryginał tak samo | ten sam przebieg palcem na tym samym telefonie: nasza p50 11,2 ms, >33 ms: 119 klatek, >50 ms: 70; oryginał p50 11,2 ms, >33 ms: 139, >50 ms: 72. U nas przeliczanie stylów 1,08 s vs 0,29 s w oryginale (do sesji 3) | — |
+| 8 | pasek na dole | oryginał tak samo | systemowy pasek przycisków Androida i pigułka „About · Work”; w oryginale identycznie | — |
+| 9 | typografia, grubości (np. stopka) | ✓ | style CSS zgodne, ale Figtree 600 ma kreskę 45 px, Goga 600 48 px (przy 400 px, wersalik 281 px w obu); teraz Figtree zmienny, 600→650, 500→530; interlinia „Companies partner…” na telefonie 16,4→36 px (domyślne h2 Webflow) | (a) checklista porównuje szerokość wiersza kroju zastępczego, nie grubość kreski |
+
+Łamanie wierszy po zmianie grubości: bez zmian na 1440, ekranie Grzegorza i 375 (porównanie z poprzednią wersją).
+
 ### Propozycje do warsztatu
 | # | Skąd | Plik i miejsce | Dokładne brzmienie | Co zyskujemy |
 |---|---|---|---|---|
@@ -89,6 +100,9 @@ Zostaje (do decyzji): kadr zdjęcia benefits (głowa zasłania „gn”, w orygi
 | 2 | uwagi 2b, 2c; (c) | `checklista.md`, B1 | „- przy kroju zastępczym: wierzchołki liter (kropka „i”, „l”, „s”) mieszczą się w maskach i rodzicach z `overflow: hidden` (pudełko tekstu vs pudełko maski, na 1440 i ekranie Grzegorza)” | dwie uwagi z ucięciami |
 | 3 | `ref.py` na juanmora | `tools/ref.py` | okno wejścia liczone od pierwszej zmiany klatki zamiast stałego `--ms=4000` | wejście oryginału nagrywa się za pierwszym razem (dziś 3 przebiegi) |
 | 4 | `compare.py` | `tools/compare.py` | adresy w `background-image` porównywać bez hosta i portu; czytać też `::before`/`::after` | dziś 8 fałszywych różnic na przebieg; zmiana wycięcia (w `::before`) niewidoczna |
+| 5 | uwaga 9; (a) | `checklista.md`, część A, punkt o kroju zastępczym | dopisać: „i grubość kreski (pionowa kreska „l”/„I” na płótnie przy 400 px) w każdej używanej grubości; przy kroju zmiennym dobrać grubość do kreski, nie do numeru” | Figtree 600 był o 6% cieńszy niż Goga 600 przy zgodnej szerokości wiersza |
+| 6 | `phone.py --local` podał stronę bez CSS i JS | `tools/_env.py`, `local_page(rel=True)` | kopiować też pliki z katalogu strony (`*.css`, `*.js`, obrazy), nie tylko podkatalogi | pomiar telefonu przed wypchnięciem na Pages (dziś stracony przebieg) |
+| 7 | uwaga 6; (b) | `checklista.md`, B4 | dopisać: „gdy strona ma ograniczenie ruchu, wejście nagrać też z `prefers-reduced-motion: reduce` i bez” | błąd planszy był od 14.10, nikt go nie widział |
 
 ## Checklista w praktyce
 Nie dotyczy: strona nie była budowana według `checklista.md`. Analiza 15.10 (`analiza-0.md`) to pierwszy przebieg
