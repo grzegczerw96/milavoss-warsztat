@@ -195,7 +195,9 @@ h1, h2, p { margin: 0; }
   align-items: flex-start;
   overflow: hidden;
 }
-.intro {
+/* the panel only: the loader's words and dot also carry the class "intro" (colour modifier), and this rule made
+   them absolute and 0 px wide, all three on one spot (15.10.2026) */
+.container-loader > .intro {
   z-index: 911;
   position: absolute;
   inset: 0 auto auto 0;
@@ -606,7 +608,7 @@ h1, h2, p { margin: 0; }
   .click-scroll-text { letter-spacing: -.35vw; font-size: 10vw; }
   .blur { -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); }
   .container-loader { box-shadow: inset 0 2px 30px #ffb286c4, inset 0 1px 80px 3px #ff72434a; }
-  .intro { -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); }
+  .container-loader > .intro { -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); }
   .cont-click { width: 25vw; height: 11vw; top: 21.2vw; left: -1.4vw; }
   .click { letter-spacing: -.4vw; font-size: 10vw; }
   .cont-name-logo { top: 5vw; }

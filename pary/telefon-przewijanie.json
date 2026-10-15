@@ -1,0 +1,13 @@
+[
+  {"reload": true}, {"wait": 4500}, {"shot": "gora"},
+  {"fps": "start"},
+  {"swipe": -500, "speed": 900}, {"wait": 500}, {"swipe": -500, "speed": 900}, {"wait": 500},
+  {"swipe": -500, "speed": 900}, {"wait": 500}, {"shot": "uslugi"},
+  {"swipe": -500, "speed": 900}, {"wait": 500}, {"swipe": -500, "speed": 900}, {"wait": 500},
+  {"swipe": -500, "speed": 900}, {"wait": 500}, {"shot": "benefits"},
+  {"swipe": -500, "speed": 900}, {"wait": 500}, {"swipe": -500, "speed": 900}, {"wait": 500},
+  {"swipe": -500, "speed": 900}, {"wait": 500}, {"swipe": -500, "speed": 900}, {"wait": 500},
+  {"swipe": -800, "speed": 1200}, {"wait": 800}, {"shot": "dol"},
+  {"fps": "stop"},
+  {"js": "({h: document.documentElement.scrollHeight, y: Math.round(scrollY), vh: innerHeight, nav: (r=>[Math.round(r.top),Math.round(r.bottom)])(document.querySelector('.nav-menu-mobile').getBoundingClientRect())})"}
+]
