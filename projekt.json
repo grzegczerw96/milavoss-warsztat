@@ -1,6 +1,7 @@
 {
   "name": "milavoss-warsztat",
   "page": "index.html",
+  "base_url": "https://grzegczerw96.github.io/milavoss-warsztat/",
   "no_carry": "window.__lenis = (typeof lenis !== 'undefined') ? lenis : null",
   "shots": {"query": ""},
   "compare": {"wait": 4000}

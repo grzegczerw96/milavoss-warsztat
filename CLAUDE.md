@@ -13,8 +13,9 @@ Czyta każda sesja w tym folderze. Proces i wiedza: `C:\Projekty\warsztat-nowy\R
   zdjęć i tekstów oryginału.
 - **Podgląd:** `.claude/launch.json` → `http://localhost:8741/`. Panel podglądu musi być widoczny, inaczej ruch stoi.
   Plansza ładowania gra zawsze (brak `?intro=0`).
-- **Repo:** lokalne git (bez GitHuba i Pages do decyzji Grzegorza). Commit jako `grzegczerw96 <greg.wolwlod@gmail.com>`,
-  opis po polsku.
+- **Repo i Pages:** https://github.com/grzegczerw96/milavoss-warsztat (gałąź `master`), podgląd
+  https://grzegczerw96.github.io/milavoss-warsztat/ (sprawdzać z `?v=<commit>`). Commit jako
+  `grzegczerw96 <greg.wolwlod@gmail.com>`, opis po polsku. `analiza/` (zrzuty oryginału) tylko lokalnie, w `.gitignore`.
 
 ## Technologia
 - GSAP 3.14.1 (ScrollTrigger, SplitText, CustomEase) i Lenis 1.3.17 z jsDelivr; font Figtree z Google Fonts.
