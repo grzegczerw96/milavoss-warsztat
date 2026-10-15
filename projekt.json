@@ -1,0 +1,7 @@
+{
+  "name": "milavoss-warsztat",
+  "page": "index.html",
+  "no_carry": "window.__lenis = (typeof lenis !== 'undefined') ? lenis : null",
+  "shots": {"query": ""},
+  "compare": {"wait": 4000}
+}
