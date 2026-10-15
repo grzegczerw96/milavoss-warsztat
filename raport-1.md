@@ -62,6 +62,34 @@ tagi Webflow w usługach (w oryginale `display:none`).
 - Lokalnie: `.claude/launch.json` → http://localhost:8741/
 - Artifact z 14.10 (wersja z `C:\Fable`): https://claude.ai/artifact/E43p8xWsqPbsL9E9GdQbnR
 
+## Sesja 2, 15.10.2026: uwagi Grzegorza
+
+| # | Uwaga | Stan | Przyczyna | Skąd błąd |
+|---|---|---|---|---|
+| 1 | karty usług bez animacji | ✓ | Windows Grzegorza ma wyłączone efekty animacji → `prefers-reduced-motion: reduce`; nasza strona wtedy stała, oryginał (IX3 bez warunku reduced motion) się rusza | (a) checklista bez punktu „czy oryginał respektuje ograniczenie ruchu”; (e) narzędzia zawsze wymuszają ruch |
+| 3 | brak wejścia tekstu i zmiany koloru przy przewijaniu | ✓ | jw. | (a), (e) |
+| 4 | „Work” się nie unosi | ✓ | jw. | (a), (e) |
+| 5 | „zablokowane” przewijanie | ✓ | jw.: przypięte benefits (≈1,6 ekranu) bez ruchu wyglądały na zatrzymane | (a), (e) |
+| 2 | inna stopka | ✓ | scena CSS bez postaci; teraz własna postać Mili za monitorem (SVG + GSAP: głowa, kiwanie, mruganie, wzrok, światło ekranu) | (c) decyzja z 14.10 „bez postaci” |
+| 2b | ucięte litery w stopce („i”, ostatnie „s”) | ✓ | maski słów SplitText przycinają na wysokości wiersza 75%; kropka „i” 2,7 px nad maską | (c) Figtree ma wyższe „i” niż Goga; nikt nie mierzył ink vs maska |
+| 2c | ucięte litery w hero | ✓ | `.hero-bottom` `overflow: hidden` (jak w oryginale), ale Figtree wychodzi ponad wersaliki | (c) jw. |
+| 3b | lepsze wycięcie zdjęcia w benefits | ✓ | ręczny wielokąt → `img/about-sil.webp` z modelu `u2net_human_seg` (lokalnie, onnxruntime) + usunięcie chłodnego tła między pasmami | — |
+
+Sprawdzone: pomiar z `reduced_motion='reduce'` (nagłówek usług w połowie zmiany koloru jak w oryginale), zrzuty na
+1440, ekranie Grzegorza (1536×742 przy 1,25) i 375; `compare.py --ref=HEAD` przed każdym commitem: różnice tylko w
+poprawianych miejscach (plus znane fałszywe alarmy, niżej). Nie sprawdzone: prawdziwy telefon, Pages na ekranie Grzegorza.
+
+Zostaje (do decyzji): kadr zdjęcia benefits (głowa zasłania „gn”, w oryginale 2–3 litery), różnice 2–7 z
+`analiza-0.md` (plansza, czasy wejścia, nawigacja 10 px wyżej, rozciąganie nazwiska, bryły, kolor zdjęcia benefits).
+
+### Propozycje do warsztatu
+| # | Skąd | Plik i miejsce | Dokładne brzmienie | Co zyskujemy |
+|---|---|---|---|---|
+| 1 | uwagi 1, 3, 4, 5; (a), (e) | `checklista.md`, część A | „- [ ] **Ograniczenie ruchu:** czy oryginał reaguje na `prefers-reduced-motion` (Webflow: warunek w danych IX3; własny JS: `matchMedia`). Nasza strona robi to samo; ekran Grzegorza ma animacje wyłączone, więc inaczej widzi stronę stojącą.” | 4 z 5 uwag tej sesji miały tę jedną przyczynę |
+| 2 | uwagi 2b, 2c; (c) | `checklista.md`, B1 | „- przy kroju zastępczym: wierzchołki liter (kropka „i”, „l”, „s”) mieszczą się w maskach i rodzicach z `overflow: hidden` (pudełko tekstu vs pudełko maski, na 1440 i ekranie Grzegorza)” | dwie uwagi z ucięciami |
+| 3 | `ref.py` na juanmora | `tools/ref.py` | okno wejścia liczone od pierwszej zmiany klatki zamiast stałego `--ms=4000` | wejście oryginału nagrywa się za pierwszym razem (dziś 3 przebiegi) |
+| 4 | `compare.py` | `tools/compare.py` | adresy w `background-image` porównywać bez hosta i portu; czytać też `::before`/`::after` | dziś 8 fałszywych różnic na przebieg; zmiana wycięcia (w `::before`) niewidoczna |
+
 ## Checklista w praktyce
 Nie dotyczy: strona nie była budowana według `checklista.md`. Analiza 15.10 (`analiza-0.md`) to pierwszy przebieg
 narzędziami warsztatu.

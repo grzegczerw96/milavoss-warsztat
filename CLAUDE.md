@@ -1,4 +1,4 @@
-# Mila Voss: odtworzenie https://juanmora.co/
+﻿# Mila Voss: odtworzenie https://juanmora.co/
 
 Czyta każda sesja w tym folderze. Proces i wiedza: `C:\Projekty\warsztat-nowy\README.md` (nie kopiować tutaj).
 
@@ -26,7 +26,10 @@ Czyta każda sesja w tym folderze. Proces i wiedza: `C:\Projekty\warsztat-nowy\R
 - Lenis jest w zmiennej `lenis` (nie `window.__lenis`); `projekt.json` → `no_carry` podpina go dla narzędzi.
 
 ## Zatwierdzone odstępstwa od oryginału (nie „naprawiać”; dopisywać z datą)
-- [brak zatwierdzonych przez Grzegorza; lista odstępstw do decyzji w `raport-1.md`]
+- 15.10.2026: strona ignoruje `prefers-reduced-motion`, jak oryginał (ruch także przy wyłączonych animacjach w systemie).
+- 15.10.2026: stopka: własna animowana postać Mili za monitorem (SVG + GSAP) zamiast wideo oryginału.
+- 15.10.2026: sylwetka w benefits: `img/about-sil.webp` (wycięcie modelem `u2net_human_seg`: `py -I narzedzia\wytnij.py img\about.jpg img\about-sil.webp`; onnxruntime 1.16.3 i model w `%LOCALAPPDATA%\wir-tools\rembg`).
+- Pozostałe odstępstwa (do decyzji): `raport-1.md`.
 
 ## Sekcje
 | NN | Sekcja | Zlecenie | Stan | Uwagi |
