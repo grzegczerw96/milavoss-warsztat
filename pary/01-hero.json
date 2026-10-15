@@ -1,0 +1,15 @@
+{
+  "orig": {"url": "https://juanmora.co/", "sec": ".wrapper-hero", "load": 9000},
+  "ours": {"url": "local", "sec": "#hero", "load": 4500},
+  "points": ["t0", "t-225", "t-450", "t-675"],
+  "items": [
+    {"name": "nav nazwa", "orig": ".nav-name", "ours": ".nav-name", "what": "box"},
+    {"name": "nav menu", "orig": ".nav-menu", "ours": ".nav-menu", "what": "box"},
+    {"name": "nav social", "orig": ".nav-social-wrapper", "ours": ".nav-social-wrapper", "what": "box"},
+    {"name": "nav kolor", "orig": ".nav-name-jm", "ours": ".nav-name-word", "what": "color"},
+    {"name": "hero góra", "orig": ".hero-top", "ours": ".hero-top", "what": "box"},
+    {"name": "hero dół", "orig": ".hero-bottom", "ours": ".hero-bottom", "what": "box"},
+    {"name": "nazwisko", "orig": ".name-mouse-lottie", "ours": ".name-stage", "what": "box"},
+    {"name": "zdjęcie", "orig": ".img-hero-wrapper", "ours": ".img-hero-wrapper", "what": "box"}
+  ]
+}
